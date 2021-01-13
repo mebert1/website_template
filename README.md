@@ -2,7 +2,9 @@
 
 
 
-This is a customizable template for a portfolio or personal website.
+This is a customizable template for a portfolio or personal website. 
+
+Check out [this website](http:www.mariusebert.com) to see what it can look like in the end.
 
 <ins>**Developer:**</ins>
 
