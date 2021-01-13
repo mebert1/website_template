@@ -1,23 +1,30 @@
 <?php
 
+include('PHPMailer/Exception.php');
+include('PHPMailer/OAuth.php');
+include('PHPMailer/PHPMailer.php');
+include('PHPMailer/POP3.php');
+include('PHPMailer/SMTP.php');
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php';
-
 if(isset($_POST['submit']) &&
-isset($_POST['name']) && $_POST['name'] != '' &&
-isset($_POST['email']) && $_POST['email'] != '' &&
-isset($_POST['subject']) && $_POST['subject'] != '' &&
-isset($_POST['message']) && $_POST['message'] != '') {
-    
+isset($_POST['name']) && ($_POST['name'] != '') &&
+isset($_POST['email']) && ($_POST['email'] != '') &&
+isset($_POST['subject']) && ($_POST['subject'] != '') &&
+isset($_POST['message']) && ($_POST['message'] != '')) {
+
     if(filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
 
         // Login credentials
         // THIS WHERE YOU NEED TO ADD YOUR OWN INFORMATION
-        $accEmail       ="name@domain.com";
-        $accPassword    ="password";        // This is sometimes different from the password you use for login (e.g. Yahoo has a different "App password")
-        $accName        ="Account Name";
+        // TODO: Add email address, password and name
+        /* Attention: Yahoo and other email providers require a pre-set application password, which is different from your 
+        login passwordcan be created in your account settings */
+        $accEmail       ="****";
+        $accPassword    ="****";
+        $accName        ="****";
 
         // User provided message
         $name = $_POST['name'];
@@ -37,6 +44,7 @@ isset($_POST['message']) && $_POST['message'] != '') {
         $mail->SMTPAuth     = true;
         $mail->SMTPSecure   = 'tls';
 
+        // TODO: Use different host link and port if you want to use another mailing service
         $mail->Host         = 'smtp.mail.yahoo.com';
         $mail->Port         = 587;
 
@@ -58,8 +66,8 @@ isset($_POST['message']) && $_POST['message'] != '') {
         } else {
             echo 'Message sent !';
         }
-
-        header('Location: index.php?mailsend');
+        
+        header('Location: index.php');
     }
 }
 ?>
