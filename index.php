@@ -210,7 +210,7 @@
 
     <!-- footer section start -->
     <footer>
-        <span>Created with template by <a href="www.mariusebert.com">Marius Ebert</a> | <span class="far fa-copyright"></span> 2020 All rights reserved.</span>
+        <span>Created with template by <a href="http://www.mariusebert.com">Marius Ebert</a> | <span class="far fa-copyright"></span> 2020 All rights reserved.</span>
     </footer>
 
     <script src="script.js"></script>
